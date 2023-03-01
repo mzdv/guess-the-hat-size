@@ -1,0 +1,12 @@
+{
+  "name": "guess-the-hat-size",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.7"
+  }
+}

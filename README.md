@@ -1,5 +1,13 @@
-# Guess the hat size!
-Guess the hat size game with ERC20 tokens and ZK.
+# Sample Hardhat Project
 
-It can be your hat size, or someone elses hat size, but you are going to 
-guess it! 
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.js
+```
