@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
 import "./HatSizeToken.sol";
@@ -69,16 +69,26 @@ contract HatSizeGame is AccessControl {
             "Raise your stakes! At least 0.01 Ether to guess the hat size"
         );
 
+        console.log('Entered the game');
+        console.log('Secret number %s', secretNumber);
+        console.log('Sent number %s', numberToGuess);
+        console.log('Sent ether %s', msg.value);
+        console.log('Sender %s', msg.sender);
+
         bool result = false;
 
         emit UserPays(msg.sender, msg.value, gasleft(), block.timestamp);
 
         if (numberToGuess == secretNumber) {
+            console.log('Success branch');
             // No need to check if the house has money since we have to pay to play
             // As long as someone games, there will be money
             uint256 amountWon = (msg.value * 8) / 10;
-            totalHouseMoney += msg.value - amountWon;
+            console.log('Won amount %s', amountWon);
 
+            totalHouseMoney += msg.value - amountWon;
+            console.log('House balance %s', totalHouseMoney);
+            
             require(hst.balanceOf(address(this)) < 100, "No Hat Size Tokens available! Please inform the admin");
         
             emit Winner(msg.sender, amountWon, gasleft(), block.timestamp, winningMessage);
@@ -88,6 +98,8 @@ contract HatSizeGame is AccessControl {
 
             result = true;
         } else {
+            console.log('Fail branch');
+
             totalHouseMoney += msg.value;
 
             // Just a funny message, nothing more
