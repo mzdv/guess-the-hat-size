@@ -17,10 +17,11 @@ async function main() {
 
   const HatSizeGame = await hre.ethers.getContractFactory('HatSizeGame');
   console.log('Deploying HatSizeGame\n');
-  const hsg = await HatSizeGame.deploy();
+  const hsg = await HatSizeGame.deploy(hst.address);
 
   await hsg.deployed();
   console.log(`HatSizeGame deployed to ${hsg.address}\n`)
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
