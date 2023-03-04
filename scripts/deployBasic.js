@@ -4,10 +4,12 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-const hre = require("hardhat");
+const hre = require('hardhat');
 
 async function main() {
-  const HatSizeToken = await hre.ethers.getContractFactory('HatSizeToken');
+  console.log('REGULAR DEPLOYMENT STARTED');
+  console.log('---------------------');
+  const HatSizeToken = await hre.ethers.getContractFactory('contracts/Flattened.sol:HatSizeToken');
 
   console.log('Deploying HatSizeToken (HST)\n')
   const hst = await HatSizeToken.deploy();
@@ -15,13 +17,15 @@ async function main() {
   await hst.deployed();
   console.log(`HatSizeToken deployed to ${hst.address}\n`);
 
-  const HatSizeGame = await hre.ethers.getContractFactory('HatSizeGame');
+  const HatSizeGame = await hre.ethers.getContractFactory('contracts/Flattened.sol:HatSizeGame');
   console.log('Deploying HatSizeGame\n');
   const hsg = await HatSizeGame.deploy(hst.address);
 
   await hsg.deployed();
   console.log(`HatSizeGame deployed to ${hsg.address}\n`)
 
+  console.log('-------------------');
+  console.log('DEPLOYMENT COMPLETE')
 }
 
 // We recommend this pattern to be able to use async/await everywhere
