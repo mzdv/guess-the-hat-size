@@ -59,5 +59,5 @@ Before everything, download the dependencies by running `npm install`
 ### ZkSync testnet
 
 * Make sure you have ETH on the Goerli testnet, otherwise there will be an 
-`insufficient funds` error
+`INSUFFICIENT_FUNDS` error
 * `npx hardhat deploy-zksync`
