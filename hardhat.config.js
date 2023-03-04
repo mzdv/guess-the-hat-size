@@ -19,7 +19,7 @@ module.exports = {
     },
     zkSyncTestnet: {
       url: "https://zksync2-testnet.zksync.dev",
-      ethNetwork: "https://eth-goerli.g.alchemy.com/v2/lImNMB6iDr1Bd7aTJKIZuo68nrmEY6Ir",   // Same story with environment variables as in deploy.js
+      ethNetwork: "goerli",   // Same story with environment variables as in deploy.js
       zksync: true,
     },
   },
@@ -27,6 +27,6 @@ module.exports = {
     version: "0.8.17",
   },
   etherscan: {
-    apiKey: "XSJIABRMJGTJNJGDZPKZZEFG2A62TF95WT"
+    apiKey: "INSERT_API_KEY_HERE"
   }
 };

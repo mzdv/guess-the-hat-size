@@ -3,7 +3,7 @@ const zksync = require('zksync-web3');
 const zkDeployer = require('@matterlabs/hardhat-zksync-deploy');
 
 async function deploy() {
-    const WALLET_KEY = 'ebb0fe2ff36909fd82f80ed1beb53c8f7a340970aaf70176affbdb890a33a3c2';    // IRL, move this to an environment variable or some key store
+    const WALLET_KEY = 'YOUR_WALLET_KEY_HERE';    // IRL, move this to an environment variable or some key store
 
     console.log('ZK DEPLOYMENT STARTED');
     console.log('---------------------');
