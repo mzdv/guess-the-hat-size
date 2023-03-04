@@ -21,6 +21,10 @@ logic for a guessing game.
 
 To make it more fun, the guessing game is called 'Guess the Hat size'. The owner
 of the smart contract produces a number that has to be guessed by the player.
+This number is the fictive 'hat size' that is being guessed. Too small hat and
+your head will hurt, but too big of a hat and you won't be able to wear it properly.
+
+
 The player pays a small fee of at least 0.01 ETH to play. If the player guesses,
 the contract transfers 80% of the contract value + 100 HST (Hat Size Tokens).
 If the player doesn't guess the number, nothing happens and no money is returned.
